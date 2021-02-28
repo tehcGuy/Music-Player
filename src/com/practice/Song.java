@@ -1,5 +1,5 @@
 package com.practice;
-
+/*the most basic class*/
 public class Song {
     private String Title;
     private int duration;

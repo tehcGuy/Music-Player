@@ -1,5 +1,7 @@
 package com.practice;
 
+/*Class with operations */
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ListIterator;
