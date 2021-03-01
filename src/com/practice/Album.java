@@ -8,11 +8,37 @@ import java.util.ListIterator;
 import java.util.Scanner;
 
 public class Album {
+    //it is not a field nor method. I cannot interact with that during the initialization with a constructor
     private LinkedList<Song> playlist = new LinkedList();
+    private String albumName;
+    private Song albumSong;
+
+    public Album(String albumName) { //important remove the 1st parameter: LinkedList<Song> playlist !!!
+        this.albumName = albumName;
+    }
+
+    public Album() {
+    }
+
+    private boolean setAlbumSong(Song albumSong) {
+        this.albumSong = albumSong;
+        return true;
+    }
+
+    public Song getAlbumSong() {
+        return albumSong;
+    }
+
+    public boolean addSongToAlbum(Album chosenAlbum, Song newSong) {
+        if(chosenAlbum.albumName.contains(newSong.getTitle())) {
+            return chosenAlbum.setAlbumSong(newSong);
+        }
+        return false;
+    }
 
     public boolean addToPlaylist(Song newSong) {
-        ArrayList<Album> checkAlbum = new ArrayList<>();
-        if(checkAlbum.contains(newSong)) {
+        ArrayList<Album> checkAlbum = new ArrayList<>(); //logical mistake? am i creating a new instance that won't have any entries?
+        if(checkAlbum.contains(newSong) && !playlist.contains(newSong)) {
             return playlist.add(newSong);
         }
         return false;
