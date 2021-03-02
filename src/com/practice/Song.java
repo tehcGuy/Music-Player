@@ -1,19 +1,19 @@
 package com.practice;
 /*the most basic class*/
 public class Song {
-    private String Title;
-    private String duration;
+    private String title;
+    private double duration;
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
-    public String getDuration() {
+    public double getDuration() {
         return duration;
     }
 
-    public Song(String title, String duration) {
-        Title = title;
+    public Song(String title, double duration) {
+        this.title = title;
         this.duration = duration;
     }
 }
