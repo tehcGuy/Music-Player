@@ -11,7 +11,7 @@ public class Album {
     //it is not a field nor method. I cannot interact with that during the initialization with a constructor
     private LinkedList<Song> playlist = new LinkedList();
     private String albumName;
-    private Song albumSong;
+    private ArrayList<Song> albumSong = new ArrayList<>();
 
     public Album(String albumName) { //important remove the 1st parameter: LinkedList<Song> playlist !!!
         this.albumName = albumName;
@@ -20,20 +20,12 @@ public class Album {
     public Album() {
     }
 
-    private boolean setAlbumSong(Song albumSong) {
+    public void setAlbumSong(ArrayList<Song> albumSong) {
         this.albumSong = albumSong;
-        return true;
     }
 
-    public Song getAlbumSong() {
+    public ArrayList<Song> getAlbumSong() {
         return albumSong;
-    }
-
-    public boolean addSongToAlbum(Album chosenAlbum, Song newSong) {
-        if(chosenAlbum.albumName.contains(newSong.getTitle())) {
-            return chosenAlbum.setAlbumSong(newSong);
-        }
-        return false;
     }
 
     public boolean addToPlaylist(Song newSong) {
@@ -98,10 +90,9 @@ public class Album {
                     break;
 
                 case 3:
-                    if(goingForward){
+                    if(goingForward) {
                         iteratePlaylist.previous();
-                    }
-                    else iteratePlaylist.next();
+                    } else iteratePlaylist.next();
                     break;
 
                 case 4:

@@ -7,10 +7,10 @@ public class Main {
     // Create a program that implements a playlist for songs
 
     // Create a Song class having Title and Duration for a song. (in the inner Song class)
-    // The program will have an Album class containing a list of songs. (LinkedList playlist, album class)
+    // The program will have an Album class containing a list of songs. (LinkedList playlist, album class)  +
     // The albums will be stored in an ArrayList (Main class)
 
-    // Songs from different albums can be added to the playlist and will appear in the list in the order
+    // Songs from different albums can be added to the playlist and will appear in the list in the order ...
     // they are added.
 
     // Once the songs have been added to the playlist, create a menu of options to:-
@@ -34,12 +34,23 @@ public class Main {
 
     public static void main(String[] args) {
         Main obj = new Main();
-        obj.album.add(new Album("Nevermind"));
-        obj.album.add(new Album("Bleach"));
+        Album nvm = new Album("Nevermind");
+        Album blch = new Album("Bleach");
 
-        obj.album.get(0).addSongToAlbum(new Album("Nevermind"), new Song("Smells like teen spirit", "3:20"));
+        obj.album.add(nvm);
+        obj.album.add(blch);
 
-//        issue is here!
-        System.out.println(obj.album.get(0).getAlbumSong().getTitle());
+        ArrayList<Song> test = new ArrayList<Song>();
+        test.add(new Song("1", "1"));
+        nvm.setAlbumSong(test);
+
+/*
+        obj.album.get(0).setAlbumSong(new ArrayList<Song>("1", "1"));
+        obj.album.get(0).setAlbumSong(new ArrayList<Song>("2", "2"));
+*/
+
+        System.out.println(nvm.getAlbumSong().get(0).getTitle());
+
+//        System.out.println(obj.album.get(0).getAlbumSong().getTitle());
     }
 }
