@@ -4,8 +4,6 @@ package com.practice;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.ListIterator;
-import java.util.Scanner;
 
 public class Album {
     private String name;
@@ -15,7 +13,7 @@ public class Album {
     public Album(String name, String artist) {
         this.name = name;
         this.artist = artist;
-        this.songs = new ArrayList<Song>();
+        this.songs = new ArrayList<>();
     }
 
     public boolean addSong(String title, double duration) {
@@ -54,4 +52,5 @@ public class Album {
         System.out.println("The song " + title + " is not in this album");
         return false;
     }
+
 }

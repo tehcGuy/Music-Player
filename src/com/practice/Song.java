@@ -16,4 +16,12 @@ public class Song {
         this.title = title;
         this.duration = duration;
     }
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "title='" + title + '\'' +
+                ", duration=" + duration +
+                '}';
+    }
 }
